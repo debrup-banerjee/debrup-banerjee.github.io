@@ -2,8 +2,6 @@
 (function () {
   'use strict';
 
-  var GITHUB_USER = 'debrup-banerjee';
-  var MAX_REPOS = 6;
   var root = document.documentElement;
 
   /* ---------- Theme ---------- */
@@ -77,67 +75,4 @@
   /* ---------- Footer year ---------- */
   var year = document.getElementById('year');
   if (year) year.textContent = String(new Date().getFullYear());
-
-  /* ---------- GitHub repositories ---------- */
-  var repoGrid = document.getElementById('repos');
-  if (!repoGrid || !window.fetch) return;
-
-  var CACHE_KEY = 'gh-repos-v1';
-  var CACHE_MS = 60 * 60 * 1000;
-
-  function el(tag, cls, text) {
-    var n = document.createElement(tag);
-    if (cls) n.className = cls;
-    if (text != null) n.textContent = text;
-    return n;
-  }
-
-  function timeAgo(iso) {
-    var d = new Date(iso);
-    if (isNaN(d)) return '';
-    return 'Updated ' + d.toLocaleDateString(undefined, { month: 'short', year: 'numeric' });
-  }
-
-  function render(repos) {
-    var list = repos
-      .filter(function (r) { return !r.fork && !r.archived && r.name.toLowerCase() !== (GITHUB_USER + '.github.io').toLowerCase(); })
-      .sort(function (a, b) { return (b.stargazers_count - a.stargazers_count) || (new Date(b.pushed_at) - new Date(a.pushed_at)); })
-      .slice(0, MAX_REPOS);
-
-    if (!list.length) return; // keep the static "browse on GitHub" fallback
-
-    repoGrid.textContent = '';
-    list.forEach(function (r) {
-      var card = el('article', 'card');
-      card.appendChild(el('span', 'card-tag', 'Repository'));
-      var h = el('h3');
-      var a = el('a', null, r.name.replace(/[-_]/g, ' '));
-      a.href = r.html_url; a.target = '_blank'; a.rel = 'noopener';
-      h.appendChild(a);
-      card.appendChild(h);
-      card.appendChild(el('p', null, r.description || 'No description yet.'));
-      var meta = el('div', 'card-meta');
-      if (r.language) meta.appendChild(el('span', 'lang', r.language));
-      if (r.stargazers_count) meta.appendChild(el('span', null, '★ ' + r.stargazers_count));
-      meta.appendChild(el('span', null, timeAgo(r.pushed_at)));
-      card.appendChild(meta);
-      repoGrid.appendChild(card);
-    });
-  }
-
-  try {
-    var cached = JSON.parse(sessionStorage.getItem(CACHE_KEY) || 'null');
-    if (cached && Date.now() - cached.t < CACHE_MS) { render(cached.data); return; }
-  } catch (e) {}
-
-  fetch('https://api.github.com/users/' + GITHUB_USER + '/repos?per_page=100&sort=pushed', {
-    headers: { Accept: 'application/vnd.github+json' }
-  })
-    .then(function (res) { if (!res.ok) throw new Error(res.status); return res.json(); })
-    .then(function (data) {
-      if (!Array.isArray(data)) return;
-      try { sessionStorage.setItem(CACHE_KEY, JSON.stringify({ t: Date.now(), data: data })); } catch (e) {}
-      render(data);
-    })
-    .catch(function () { /* offline or rate-limited: static fallback stays */ });
 })();

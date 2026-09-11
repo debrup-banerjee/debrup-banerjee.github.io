@@ -262,17 +262,7 @@ p { margin: 0 0 1em; }
 .card-meta .lang::before { content: ""; display: inline-block; width: .55rem; height: .55rem; border-radius: 50%; background: var(--accent); margin-right: .4rem; vertical-align: .05em; }
 .card-tag { font-family: var(--mono); font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); }
 
-.projects-empty {
-  grid-column: 1 / -1; border: 1px dashed var(--rule); border-radius: var(--radius);
-  padding: clamp(1.5rem, 4vw, 2.5rem); background: var(--surface);
-  display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 1rem;
-}
-.projects-empty p { margin: 0; color: var(--ink-2); max-width: 48ch; }
-.projects-empty strong { display: block; font-family: var(--serif); font-weight: 500; font-size: 1.35rem; color: var(--ink); margin-bottom: .25rem; }
 
-.skeleton { background: linear-gradient(90deg, var(--surface), var(--accent-soft), var(--surface)); background-size: 200% 100%; animation: shimmer 1.4s ease-in-out infinite; border-color: var(--rule); }
-@keyframes shimmer { 0% { background-position: 100% 0; } 100% { background-position: -100% 0; } }
-@media (prefers-reduced-motion: reduce) { .skeleton { animation: none; } }
 
 /* ---------- Education ---------- */
 .edu { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
@@ -322,7 +312,6 @@ p { margin: 0 0 1em; }
 }
 
 /* ---------- Skills & recognition ---------- */
-.subhead { margin: 3rem 0 1.25rem; }
 .skills { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
 .skill-group { background: var(--surface); padding: 1.5rem 1.35rem; }
 .skill-group h3 { font-size: 1.3rem; margin-bottom: 1rem; }
