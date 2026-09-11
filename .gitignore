@@ -1,0 +1,7 @@
+# Local-only files — never publish
+Profile.pdf
+*.pdf
+_to_delete/
+.DS_Store
+Thumbs.db
+desktop.ini
