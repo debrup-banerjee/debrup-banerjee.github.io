@@ -1,0 +1,5 @@
+/* ---------- 404 ---------- */
+.notfound { min-height: 70vh; display: grid; align-content: center; padding-block: 4rem; }
+.notfound .code { font-family: var(--mono); color: var(--accent); letter-spacing: .12em; }
+.notfound h1 { font-size: clamp(2.5rem, 8vw, 5rem); margin: .75rem 0 1.25rem; font-weight: 400; letter-spacing: -.03em; }
+.notfound p { color: var(--ink-2); max-width: 44ch; }

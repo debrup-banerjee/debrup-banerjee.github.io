@@ -1,0 +1,15 @@
+/* ---------- Sections ---------- */
+.section { padding-block: clamp(3.5rem, 8vw, 6rem); border-top: 1px solid var(--rule); }
+.section-head { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: clamp(1.5rem, 5vw, 4rem); margin-bottom: clamp(2rem, 4vw, 3rem); }
+.section-label { font-family: var(--mono); font-size: .78rem; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin: .6rem 0 0; }
+.section-label span { color: var(--accent); margin-right: .5rem; }
+.section-title { font-size: clamp(2rem, 4.6vw, 3.25rem); letter-spacing: -.025em; }
+.section-intro { color: var(--ink-2); margin: 1rem 0 0; max-width: 58ch; }
+
+.section-body { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: clamp(1.5rem, 5vw, 4rem); }
+.section-body > .col-2 { grid-column: 2; }
+
+@media (max-width: 760px) {
+  .section-head, .section-body { grid-template-columns: 1fr; gap: 1rem; }
+  .section-body > .col-2 { grid-column: 1; }
+}

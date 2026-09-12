@@ -1,0 +1,10 @@
+{
+  "name": "debrup-banerjee.github.io",
+  "private": true,
+  "type": "module",
+  "description": "Personal portfolio — modular source builds into static index.html/CSS/JS for GitHub Pages.",
+  "scripts": {
+    "build": "node tools/build.js",
+    "serve": "python3 -m http.server 8080"
+  }
+}

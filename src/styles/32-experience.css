@@ -1,0 +1,21 @@
+/* ---------- Experience ---------- */
+.timeline { list-style: none; margin: 0; padding: 0; }
+.job { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 2.2fr); gap: clamp(1rem, 5vw, 4rem); padding: 1.75rem 0; border-top: 1px solid var(--rule); }
+.job:last-child { border-bottom: 1px solid var(--rule); }
+.job-when { font-family: var(--mono); font-size: .82rem; color: var(--muted); padding-top: .35rem; letter-spacing: .02em; }
+.job-when .now { display: inline-block; margin-top: .5rem; font-size: .7rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent); border: 1px solid currentColor; padding: .15rem .45rem; border-radius: 999px; }
+.job-org { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: .35rem; }
+.job-org small { display: block; font-family: var(--sans); font-size: .9rem; font-weight: 400; color: var(--muted); letter-spacing: 0; margin-top: .35rem; }
+.roles { list-style: none; margin: .9rem 0 0; padding: 0; border-left: 1px solid var(--rule); }
+.roles li { display: flex; flex-wrap: wrap; justify-content: space-between; gap: .1rem 1rem; padding: .3rem 0 .3rem 1rem; color: var(--ink); }
+.roles li strong { font-weight: 500; }
+.roles li span { font-family: var(--mono); font-size: .78rem; color: var(--muted); padding-top: .2rem; white-space: nowrap; }
+.job:first-child .roles li:first-child { border-left: 2px solid var(--accent); margin-left: -1px; padding-left: calc(1rem - 1px); }
+.impact { list-style: none; margin: 1.1rem 0 0; padding: 0; max-width: 62ch; }
+.impact li { position: relative; padding-left: 1.4rem; margin: .45rem 0; color: var(--ink-2); }
+.impact li::before { content: ""; position: absolute; left: 0; top: .74em; width: .6rem; height: 2px; background: var(--accent); }
+.job-note { color: var(--ink-2); margin: .75rem 0 0; max-width: 60ch; }
+
+@media (max-width: 760px) {
+  .job { grid-template-columns: 1fr; gap: .35rem; }
+}

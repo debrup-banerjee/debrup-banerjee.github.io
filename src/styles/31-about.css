@@ -1,0 +1,9 @@
+/* ---------- About ---------- */
+.prose p { max-width: 62ch; color: var(--ink-2); }
+.prose p:first-child { font-size: 1.2rem; color: var(--ink); line-height: 1.55; }
+
+.focus { list-style: none; padding: 0; margin: 2rem 0 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1px; background: var(--rule); border: 1px solid var(--rule); border-radius: var(--radius); overflow: hidden; }
+.focus li { background: var(--surface); padding: 1.25rem 1.25rem 1.35rem; }
+.focus h3 { font-size: 1.2rem; margin-bottom: .35rem; }
+.focus p { font-size: .94rem; color: var(--muted); margin: 0; }
+@media (max-width: 560px) { .focus { grid-template-columns: 1fr; } }
