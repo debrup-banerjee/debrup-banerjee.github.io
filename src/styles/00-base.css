@@ -12,6 +12,7 @@
   --muted: #4b5563;
   --rule: #e2e5ea;
   --accent: #0052cc;
+  --accent-text: #0052cc;
   --accent-ink: #ffffff;
   --accent-soft: #e4ecfb;
   --focus: #4f46e5;
@@ -36,6 +37,7 @@
     --muted: #8b93a7;
     --rule: #2a3346;
     --accent: #6049ea;
+    --accent-text: #a78bfa;
     --accent-ink: #ffffff;
     --accent-soft: #241f47;
     --focus: #a5b4fc;
@@ -52,6 +54,7 @@
   --muted: #8b93a7;
   --rule: #2a3346;
   --accent: #6049ea;
+  --accent-text: #a78bfa;
   --accent-ink: #ffffff;
   --accent-soft: #241f47;
   --focus: #a5b4fc;
@@ -78,7 +81,7 @@ body {
 
 img, svg { max-width: 100%; display: block; }
 a { color: inherit; text-decoration-color: color-mix(in srgb, var(--accent) 55%, transparent); text-underline-offset: .2em; text-decoration-thickness: 1px; }
-a:hover { color: var(--accent); }
+a:hover { color: var(--accent-text); }
 :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; border-radius: 4px; }
 ::selection { background: var(--accent); color: var(--accent-ink); }
 

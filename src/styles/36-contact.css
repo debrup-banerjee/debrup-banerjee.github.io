@@ -1,7 +1,7 @@
 /* ---------- Contact ---------- */
 .contact { padding-block: clamp(4rem, 10vw, 7rem); border-top: 1px solid var(--rule); }
 .contact h2 { font-size: clamp(2.5rem, 8vw, 5.5rem); letter-spacing: -.035em; line-height: 1; font-weight: 400; max-width: 14ch; }
-.contact h2 em { color: var(--accent); }
+.contact h2 em { color: var(--accent-text); }
 .contact p { color: var(--ink-2); max-width: 48ch; margin: 1.5rem 0 0; font-size: 1.1rem; }
 .contact-links { list-style: none; padding: 0; margin: 2.5rem 0 0; border-top: 1px solid var(--ink); }
 .contact-links a {

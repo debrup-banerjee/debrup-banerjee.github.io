@@ -12,8 +12,9 @@ export const site = {
     description: 'Debrup Banerjee is an engineering leader at Appian in Chennai, heading the Enterprise Integration group. Previously Fidelity Labs, CDW and HCL Technologies.',
     author: 'Debrup Banerjee',
     url: 'https://debrup-banerjee.github.io/',
-    themeColorLight: '#f7f4ee',
-    themeColorDark: '#131210',
+    // Must match --bg in src/styles/00-base.css for light/dark respectively.
+    themeColorLight: '#f8f9fa',
+    themeColorDark: '#111827',
     og: {
       type: 'profile',
       title: 'Debrup Banerjee — Engineering Leader',
