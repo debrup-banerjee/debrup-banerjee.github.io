@@ -51,6 +51,19 @@ paid hosting and no server to run or maintain.
 4. **This document**: a standing spec + constraints record, so future work
    (by a person or an agent) has the original intent in one place instead of
    scattered across chat history.
+5. **Color palette request**: replace the original warm-editorial palette
+   (cream background, rust accent) with something more corporate, given four
+   reference palettes (Classic Monochrome, Modern Tech Navy, Earthy Sage &
+   Cream, Corporate Trust Blue). Classic Monochrome and Corporate Trust Blue
+   are structurally the same idea (light/off-white background, dark
+   charcoal/slate text, one accent color) so they were merged into the light
+   theme, using Corporate Trust Blue's deep blue (`#0052CC`) as the accent.
+   Modern Tech Navy was used as-is for the dark theme (navy background,
+   white text, electric indigo accent `#6049EA`). Earthy Sage & Cream was
+   deliberately not used — its own source description positions it for
+   "creative writers and designers," not an engineering-leader profile.
+   Implemented entirely in the theme tokens in `src/styles/00-base.css`;
+   contrast-checked against WCAG AA (4.5:1 body text, 3:1 large text/UI).
 
 ## 3. Functional requirements
 
@@ -127,6 +140,17 @@ decisions made earlier in this project, not just general best practice:
     delete" directories, duplicate asset dumps). Auxiliary, non-deployed
     files (like preview screenshots for the README) live in one clearly
     named folder (`previews/`), not scattered or ambiguously named.
+12. **Theming stays token-driven.** Every color on the site resolves from
+    the CSS custom properties defined once in `src/styles/00-base.css`
+    (`--bg`, `--surface`, `--ink`, `--ink-2`, `--muted`, `--rule`,
+    `--accent`, `--accent-ink`, `--accent-soft`, `--focus`, `--shadow`).
+    Don't hardcode a hex color in another `src/styles/*.css` partial —
+    change the palette in one place and every section, and both the light
+    and dark theme, stay in sync. (`src/styles/70-print.css` forcing pure
+    black-on-white for printed output is the one intentional exception.)
+    Any new accent color must be checked against WCAG AA contrast (4.5:1 for
+    body text, 3:1 for large text/UI elements) against the background it
+    will sit on, in both themes.
 
 ## 5. Non-goals
 

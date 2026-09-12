@@ -2,21 +2,22 @@
 
 /* ==========================================================================
    Debrup Banerjee — portfolio
-   Clean editorial theme · light / dark · no build step
+   Professional theme · light = Classic Monochrome + Corporate Trust Blue
+                        · dark  = Modern Tech Navy · no build step
    ========================================================================== */
 
 :root {
-  --bg: #f7f4ee;
-  --surface: #fffdf9;
-  --ink: #1b1a17;
-  --ink-2: #4a4740;
-  --muted: #7a756b;
-  --rule: #e3ddd1;
-  --accent: #b4462b;
+  --bg: #f8f9fa;
+  --surface: #ffffff;
+  --ink: #121212;
+  --ink-2: #3f4757;
+  --muted: #4b5563;
+  --rule: #e2e5ea;
+  --accent: #0052cc;
   --accent-ink: #ffffff;
-  --accent-soft: #f3e2da;
-  --focus: #1f5fbf;
-  --shadow: 0 1px 2px rgba(27, 26, 23, .04), 0 8px 24px rgba(27, 26, 23, .06);
+  --accent-soft: #e4ecfb;
+  --focus: #4f46e5;
+  --shadow: 0 1px 2px rgba(18, 18, 18, .05), 0 8px 24px rgba(18, 18, 18, .08);
 
   --serif: "Fraunces", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
   --sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
@@ -30,33 +31,33 @@
 
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) {
-    --bg: #131210;
-    --surface: #1b1a17;
-    --ink: #eeeae2;
-    --ink-2: #c4bfb4;
-    --muted: #938d82;
-    --rule: #2d2a25;
-    --accent: #e8805f;
-    --accent-ink: #1b1a17;
-    --accent-soft: #3a241c;
-    --focus: #8ab4ff;
-    --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+    --bg: #111827;
+    --surface: #1a2333;
+    --ink: #ffffff;
+    --ink-2: #c7ccd9;
+    --muted: #8b93a7;
+    --rule: #2a3346;
+    --accent: #6049ea;
+    --accent-ink: #ffffff;
+    --accent-soft: #241f47;
+    --focus: #a5b4fc;
+    --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px rgba(0, 0, 0, .3);
     color-scheme: dark;
   }
 }
 
 :root[data-theme="dark"] {
-  --bg: #131210;
-  --surface: #1b1a17;
-  --ink: #eeeae2;
-  --ink-2: #c4bfb4;
-  --muted: #938d82;
-  --rule: #2d2a25;
-  --accent: #e8805f;
-  --accent-ink: #1b1a17;
-  --accent-soft: #3a241c;
-  --focus: #8ab4ff;
-  --shadow: 0 1px 2px rgba(0, 0, 0, .3), 0 8px 24px rgba(0, 0, 0, .25);
+  --bg: #111827;
+  --surface: #1a2333;
+  --ink: #ffffff;
+  --ink-2: #c7ccd9;
+  --muted: #8b93a7;
+  --rule: #2a3346;
+  --accent: #6049ea;
+  --accent-ink: #ffffff;
+  --accent-soft: #241f47;
+  --focus: #a5b4fc;
+  --shadow: 0 1px 2px rgba(0, 0, 0, .35), 0 8px 24px rgba(0, 0, 0, .3);
   color-scheme: dark;
 }
 
