@@ -5,3 +5,11 @@ _to_delete/
 .DS_Store
 Thumbs.db
 desktop.ini
+
+# Secrets — never publish (defense in depth; none should exist in this repo)
+.env
+.env.*
+*.pem
+*.key
+*credentials*
+*secret*
